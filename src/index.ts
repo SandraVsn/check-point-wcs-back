@@ -10,12 +10,7 @@ import { CountryResolver } from './resolvers/CountryResolver';
 import { dataSource } from './db';
 
 const start = async (): Promise<void> => {
-  dataSource
-    .initialize()
-    .then(() => {
-      // here you can start to work with your database
-    })
-    .catch((error) => console.log(error));
+  await dataSource.initialize();
   const app = express();
   const httpServer = http.createServer(app);
 

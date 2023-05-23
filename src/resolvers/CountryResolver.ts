@@ -1,6 +1,5 @@
 import { Arg, Mutation, Query, Resolver } from 'type-graphql';
 import { Country, CountryDto } from '../entities/Country';
-import { DataSource, getRepository } from 'typeorm';
 import { dataSource } from '../db';
 
 @Resolver(Country)
