@@ -24,6 +24,15 @@ export class CountryResolver {
     return country;
   }
 
+  @Query(() => [Country])
+  async getCountriesOfContinent(
+    @Arg('continent', () => String) continent: string
+  ): Promise<Country[]> {
+    return await dataSource
+      .getRepository(Country)
+      .find({ where: { continent } });
+  }
+
   /** ***********************************
      MUTATION
      ************************************ */
